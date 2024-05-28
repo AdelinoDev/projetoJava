@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
 import java.util.Objects;
 
 public class Department implements Serializable { // 5- Serializable
@@ -59,5 +60,5 @@ public class Department implements Serializable { // 5- Serializable
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + "]";
 	}
-	
+
 }
