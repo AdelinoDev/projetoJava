@@ -3,6 +3,7 @@ package application;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import db.DB;
 import model.dao.DaoFactory;
@@ -14,6 +15,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		
+		Scanner sc = new Scanner(System.in);
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
@@ -45,6 +47,14 @@ public class Program {
 		seller.setName("Martha Waine");
 		sellerDao.update(seller);
 		System.out.println("Atualização completada com sucesso!");
+		
+		System.out.println("\n=== TEST 6: seller delete =====");
+		System.out.print("Entre com o id para testar delete: ");
+		int id = sc.nextInt();
+		sellerDao.deleteById(id);
+		System.out.println("Operação realizada com sucesso!");
+		
+		sc.close();
 	}
 
 }
